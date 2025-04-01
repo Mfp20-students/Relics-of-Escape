@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Story</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 0;
+    }
+    .page {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background-color: #1a1a1a;
+      margin: 20px auto;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      position: relative;
+    }
+    .page.active {
+      display: block;
+    }
+    .click-zone {
+      position: absolute;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .room-img {
+      width: 100%;
+      height: 80vh; /* Adjusted to take more of the vertical space */
+      object-fit: cover; /* Ensures the image covers the area while maintaining its aspect ratio */
+      margin-top: 50px; /* Space between text and image */
+    }
+    .button {
+      font-size: 1.5rem;
+      color: white;
+      background-color: #0D2537;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="page active" id="page-0">
+    <h2>Relics of Escape by Morgan Petersen
+    </h2> You find yourself standing in front of an old, mysterious door. The faint sound of creaking wood echoes through the air. There's an odd feeling in your stomach as if something is waiting on the other side, but you're unsure what. The door beckons you with an eerie presence, challenging you to step forward.Open the door to begin.
+    <div style="position: relative;">
+      <img src="https://i.pinimg.com/1200x/68/58/84/6858840cae9e8b7de6d1b583f2629cfd.jpg" class="room-img" alt="Door Image">
+      <div class="click-zone" onclick="goToPage(1)" style="top: 30%; left: 20%; width: 70%; height: 80%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-1">
+    <h2>You step into a grand foyer. The dimly lit space gives off an ancient, abandoned vibe. Dusty chandeliers hang from the ceiling, casting long shadows on the ornate furniture. Surrounding the steps, you see four large statues, but you cant help but feel one them following you as you move. You can feel the weight of its gaze. Which statue is it?</h2>
+    <div style="position: relative;">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOiGr6VyJyZni8zDg_UGB1w2uLqxULk01AkbbMXK1nW5tifflnr1XFjaxZuQjfIRiwpI69Qci0SAYaP7CWPFHyMC1k_7dw_3RL1KhviPLv7Y2iuLTXg5BXFsOrbW1gcSeubQzv7gmGUh4/s1600/mansioncandles.jpg" class="room-img" alt="Foyer Image">
+      <div class="click-zone" onclick="goToPage(2)" style="top: 40%; left: 30%; width: 10%; height: 50%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-2">
+    <h2>You enter the living room, and the first thing you notice are the ghostly portraits hanging on the walls. The faces in the paintings seem to shift, almost as if they're alive. You feel a cold breeze pass by you, and suddenly, the eyes of the portraits seem to follow your every step. You can’t shake the feeling that something is hiding in the shadows, waiting to make itself known. Click the ghostly pictures.</h2>
+    <div style="position: relative;">
+      <img src="https://learncalifornia.org/wp-content/uploads/2024/09/Victorian-Ghosts-683x1024.jpeg" class="room-img" alt="Ghost Picture Room">
+      <div class="click-zone" onclick="clickGhost(this)" style="top: 20%; left: 55%; width: 10%; height: 10%;"></div>
+      <div class="click-zone" onclick="clickGhost(this)" style="top: 20%; left: 75%; width: 20%; height: 30%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-3">
+    <h2>You find yourself in a dusty, dark kitchen. Broken plates and rotting food are scattered across the countertops. The faint smell of decay fills the air. Amidst the chaos, you spot something strange: its a clean, green lever. It seems out of place, almost a little too clean. Can this hold the key to your escape?</h2>
+    <div style="position: relative;">
+      <img src="https://images.fineartamerica.com/images-medium-large-5/haunted-kitchen-daniel-george.jpg" class="room-img" alt="Kitchen Image">
+      <div class="click-zone" onclick="goToPage(4)" style="top: 60%; left: 15%; width: 10%; height: 20%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-4">
+    <h2>You step into a long dining room, where cobwebs hang from the ceiling and the air feels stale. A large table is set for a meal that was never eaten, its surface covered with dust. You need a break and at the far end of the room you pick up the cleanist wine bottle and take a big gulp, because you deserve a little help. You continue on you way to possibly find a way out of this cursed house.</h2>
+    <div style="position: relative;">
+      <img src="https://live.staticflickr.com/7479/15474508359_4005de7f65_b.jpg" class="room-img" alt="Dining Room Image">
+      <div class="click-zone" onclick="goToPage(5)" style="top: 5%; left: 65%; width: 20%; height: 70%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-5">
+    <h2>The bathroom is unsettling. The cracked mirrors reflect a distorted version of yourself, and the flickering light makes it hard to tell whether you're seeing things. Oddly, the urinals seem to have been left in a peculiar arrangement, almost as if they were placed deliberately. The sound of water dripping from one of the taps echoes through the room, making the atmosphere feel more oppressive, but you feel the need to check both the urnials.</h2>
+    <div style="position: relative;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw54LplMsGJ0TbzkZvcWmk8iklDsvhnMPRTw&s" class="room-img" alt="Bathroom Image">
+      <div class="click-zone" onclick="clickUrinal(this)" style="top: 70%; left: 60%; width: 15%; height: 15%;"></div>
+      <div class="click-zone" onclick="clickUrinal(this)" style="top: 70%; left: 80%; width: 20%; height: 15%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-6">
+    <h2>You enter the bedroom, the air heavy with dust. A large bed sits in the center of the room, draped in a faded quilt. At the foot of the bed, you notice an old wooden chest. Its lock seems old, but you feel a strange pull towards it. You have a hunch that whatever is inside may hold the key to escaping this haunted house.</h2>
+    <div style="position: relative;">
+      <img src="https://64.media.tumblr.com/b6a1c74bf314befb6a84edbc9c81ec22/tumblr_mw415hI5aj1sjdfg2o1_1280.jpg" class="room-img" alt="Bedroom Image">
+      <div class="click-zone" onclick="goToPage(7)" style="top: 65%; left: 45%; width: 20%; height: 20%;"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-7">
+    <h2>Finally, after what feels like an eternity, you’ve reached the end of your journey. The last door creaks open to reveal the outside world. The cool night air greets you, and the full moon shines brightly in the sky. You’ve escaped the haunted mansion! With a sense of triumph and relief, you step outside, ready to leave the horrors of the house behind.</h2>
+    <div style="position: relative;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUA1Vld9LX0VkH_oO4CTkQOds3y3gOn7qtdw&s" class="room-img" alt="Escape Image">
+    </div>
+    <div class="button" onclick="goToPage(0)">Restart Adventure</div>
+  </div>
+
+  <script>
+    let ghostCount = 0;
+    let urinalCount = 0;
+
+    function goToPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); // Hide all pages
+      document.getElementById('page-' + num).classList.add('active'); // Show selected page
+      if (num === 0) {
+        ghostCount = 0;
+        urinalCount = 0;
+        document.querySelectorAll('.clicked').forEach(el => el.classList.remove('clicked'));
+      }
+    }
+
+    function clickGhost(el) {
+      if (!el.classList.contains('clicked')) {
+        el.classList.add('clicked');
+        ghostCount++;
+        if (ghostCount === 2) {
+          goToPage(3);
+        }
+      }
+    }
+
+    function clickUrinal(el) {
+      if (!el.classList.contains('clicked')) {
+        el.classList.add('clicked');
+        urinalCount++;
+        if (urinalCount === 2) {
+          goToPage(6);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
